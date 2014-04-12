@@ -1,0 +1,16 @@
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\bin\Debug\BusinessManagementSystem.exe.config
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\bin\Debug\BusinessManagementSystem.exe
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\bin\Debug\BusinessManagementSystem.pdb
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\MainWindow.baml
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\MainWindow.g.cs
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\App.g.cs
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem_MarkupCompile.cache
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.g.resources
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.Properties.Resources.resources
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.csproj.GenerateResource.Cache
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.exe
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BusinessManagementSystem\BusinessManagementSystem\bin\Debug\BusinessManagementSystem.exe.config
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.exe
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\BusinessManagementSystem.pdb
