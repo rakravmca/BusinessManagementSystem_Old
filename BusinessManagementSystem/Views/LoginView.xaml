@@ -5,7 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <DockPanel>
+        <Border DockPanel.Dock="Left">
             
-    </Grid>
+        </Border>
+        <Border DockPanel.Dock="Right">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+                <Border BorderBrush="Green" BorderThickness="1,1,1,1" Background="Azure">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="200" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Content="User Login:" FontWeight="Bold" Foreground="Green"/>
+                        <Label Grid.Column="0" Grid.Row="1" Content="Username:"/>
+                        <Label Grid.Column="0" Grid.Row="2" Content="Password:"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=Username}"/>
+                        <PasswordBox Grid.Column="1" Grid.Row="2" Margin="3" />
+                        <WrapPanel Grid.Column="1" Grid.Row="3">
+                            <Button Margin="3" Content="Login" Command="{Binding Path=DataContext.LoginUserCommand}" />
+                        </WrapPanel>
+                    </Grid>
+                </Border>
+            </WrapPanel>
+        </Border>
+    </DockPanel>
+    
 </UserControl>

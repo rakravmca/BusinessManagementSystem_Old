@@ -1,8 +1,67 @@
-﻿<Window x:Class="BusinessManagementSystem.ApplicationView"
+﻿<Window xmlns:Views="clr-namespace:BusinessManagementSystem.Views"  
+        xmlns:ViewModels="clr-namespace:BusinessManagementSystem.ViewModels"
+        x:Class="BusinessManagementSystem.ApplicationView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ApplicationView" Height="500" Width="900">
-    <Grid>
-        
-    </Grid>
+        Title="Business Management System" Height="500" Width="900">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type ViewModels:LoginViewModel}">
+            <Views:LoginView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:HomeViewModel}">
+            <Views:HomeView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:UserViewModel}">
+            <Views:UserView />
+        </DataTemplate>
+        <Style x:Key="LinkButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock FontWeight="Bold">
+                            <ContentPresenter />
+                        </TextBlock>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground"  Value="Blue" />
+            <Style.Triggers>
+                <Trigger  Property="IsMouseOver" Value="true">
+                    <Setter  Property="Foreground" Value="Red" />
+                    <Setter Property="Cursor" Value="Hand" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Border DockPanel.Dock="Top" BorderBrush="Black" BorderThickness="0,0,1,0" Background="Azure">
+
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Logout" Style="{StaticResource LinkButton}"></Button>
+            </WrapPanel>
+        </Border>
+        <Border DockPanel.Dock="Top" BorderBrush="Green" BorderThickness="0,0,0,1">
+            <Menu IsMainMenu="True">
+                <MenuItem Header="Administration" ItemsSource="{Binding AdministrationViewModels}">
+                    <MenuItem.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Name}" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding }" Style="{StaticResource LinkButton}"/>
+                        </DataTemplate>
+                    </MenuItem.ItemTemplate>
+                </MenuItem>
+            </Menu>
+        </Border>
+        <Border DockPanel.Dock="left" BorderBrush="Black" BorderThickness="0,0,0,0">
+            <ContentControl />
+        </Border>
+        <Border DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="0,0,0,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+                    <GradientStop Color="Azure" Offset="0"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="0.567"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <ContentControl Content="{Binding CurrentPageViewModel}" />
+        </Border>
+    </DockPanel>
 </Window>
