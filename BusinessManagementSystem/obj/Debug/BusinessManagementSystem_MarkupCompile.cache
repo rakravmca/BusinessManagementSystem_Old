@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BusinessManagementSystem\BusinessManagementSystem\obj\Debug\
 BusinessManagementSystem
 none
 false
 DEBUG;TRACE
-C:\Users\rakeshn\Rakesh\Dropbox\Projects\BMS\BusinessManagementSystem\BusinessManagementSystem\App.xaml
-11151548125
+C:\Users\rakeshn\Rakesh\Dropbox\Projects\BusinessManagementSystem\BusinessManagementSystem\App.xaml
+4953765729
 
-5-2017746502
-12-1401562060
-MainWindow.xaml;
+19506356217
+171933239799
+ApplicationView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\UserView.xaml;
 
 False
 
