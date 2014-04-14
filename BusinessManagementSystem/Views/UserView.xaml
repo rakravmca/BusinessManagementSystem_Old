@@ -8,7 +8,7 @@
     <DockPanel>
         <Border DockPanel.Dock="top">
             <WrapPanel Margin="10,4,0,0">
-                <Button Content="Add User"  Margin="3"  />
+                <Button Content="Add User"  Margin="3" Command="{Binding  Path=AddUserCommand}"  />
             </WrapPanel>
         </Border>
         <Border DockPanel.Dock="Left" Width="700">
@@ -46,50 +46,44 @@
         </Border>
         <Border DockPanel.Dock="right">
             <Popup Name="EditPopup" IsOpen="{Binding Path=IsEditPopupOpen}" Placement="Relative" PlacementTarget="{Binding ElementName=lvUsers}" PlacementRectangle="50,20,20,20" PopupAnimation="Fade">
-                <ListView ItemsSource="{Binding CurrentUsers}" Name="lvUser">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Background="Gray">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="200" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="200" />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Grid.Row="0" Content="First Name:"/>
-                                <Label Grid.Column="0" Grid.Row="1" Content="Middle Name:"/>
-                                <Label Grid.Column="0" Grid.Row="2" Content="Last Name:"/>
-                                <Label Grid.Column="0" Grid.Row="3" Content="Gender:"/>
-                                <Label Grid.Column="0" Grid.Row="4" Content="E-Mail:"/>
-                                <Label Grid.Column="0" Grid.Row="5" Content="Username:"/>
-                                <Label Grid.Column="0" Grid.Row="6" Content="Password:"/>
-                                <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=FirstName}"/>
-                                <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=MiddleName}" />
-                                <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=LastName}" />
-                                <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=Gender}" />
-                                <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=EmailAddress}" />
-                                <TextBox Grid.Column="1" Grid.Row="5" Margin="3" Text="{Binding Path=Username}" />
-                                <PasswordBox Grid.Column="1" Grid.Row="6" Margin="3"/>
-                                <Label Grid.Column="2" Grid.Row="0" Grid.RowSpan="7" Content="Birth Date:"/>
-                                <Calendar Grid.Column="3" Grid.Row="0" Grid.RowSpan="7" Margin="3" DisplayDate="{Binding Path=BirthDate}"/>
-                                <WrapPanel Grid.Column="1" Grid.Row="7" Orientation="Horizontal">
-                                    <Button Grid.Column="0" Grid.Row="7" Content="Save"  Margin="3"  />
-                                    <Button Grid.Column="1" Grid.Row="7" Content="Cancel" Margin="3" Command="{Binding ElementName=lvUser,  Path=DataContext.CloseEditUserPopupCommand}"/>
-                                </WrapPanel>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <Grid Background="Gray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Content="First Name:"/>
+                    <Label Grid.Column="0" Grid.Row="1" Content="Middle Name:"/>
+                    <Label Grid.Column="0" Grid.Row="2" Content="Last Name:"/>
+                    <Label Grid.Column="0" Grid.Row="3" Content="Gender:"/>
+                    <Label Grid.Column="0" Grid.Row="4" Content="E-Mail:"/>
+                    <Label Grid.Column="0" Grid.Row="5" Content="Username:"/>
+                    <Label Grid.Column="0" Grid.Row="6" Content="Password:"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Text="{Binding Path=CurrentUser.FirstName}"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Text="{Binding Path=CurrentUser.MiddleName}" />
+                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Text="{Binding Path=CurrentUser.LastName}" />
+                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Text="{Binding Path=CurrentUser.Gender}" />
+                    <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Text="{Binding Path=CurrentUser.EmailAddress}" />
+                    <TextBox Grid.Column="1" Grid.Row="5" Margin="3" Text="{Binding Path=CurrentUser.Username}" />
+                    <PasswordBox Grid.Column="1" Grid.Row="6" Margin="3"/>
+                    <Label Grid.Column="2" Grid.Row="0" Grid.RowSpan="7" Content="Birth Date:"/>
+                    <Calendar Grid.Column="3" Grid.Row="0" Grid.RowSpan="7" Margin="3" DisplayDate="{Binding Path=CurrentUser.BirthDate}"/>
+                    <WrapPanel Grid.Column="1" Grid.Row="7" Orientation="Horizontal">
+                        <Button Grid.Column="0" Grid.Row="7" Content="Save"  Margin="3"  />
+                        <Button Grid.Column="1" Grid.Row="7" Content="Cancel" Margin="3" Command="{Binding  Path=CloseEditUserPopupCommand}"/>
+                    </WrapPanel>
+                </Grid>
             </Popup>
         </Border>
     </DockPanel>

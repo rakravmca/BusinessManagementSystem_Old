@@ -16,7 +16,6 @@ namespace BusinessManagementSystem.ViewModels
         private int _userId;
         private bool _isEditPopupOpen;
         private User _currentUser;
-        private List<User> _currentUsers;
         private List<User> _userCollection;
         private ICommand _getUserCommand;
         private ICommand _saveUserCommand;
@@ -36,6 +35,19 @@ namespace BusinessManagementSystem.ViewModels
         #endregion
 
         #region Commands
+
+        public ICommand AddUserCommand
+        {
+            get
+            {
+                if (_addUserCommand == null)
+                {
+                    _addUserCommand = new RelayCommand(
+                        p => AddUser());
+                }
+                return _addUserCommand;
+            }
+        }
 
         public ICommand EditUserCommand
         {
@@ -103,19 +115,6 @@ namespace BusinessManagementSystem.ViewModels
             }
         }
 
-        public List<User> CurrentUsers
-        {
-            get { return _currentUsers; }
-            set
-            {
-                if (value != _currentUsers)
-                {
-                    _currentUsers = value;
-                    OnPropertyChanged("CurrentUsers");
-                }
-            }
-        }
-
         public bool IsEditPopupOpen
         {
             get { return _isEditPopupOpen; }
@@ -164,17 +163,20 @@ namespace BusinessManagementSystem.ViewModels
             // You would implement your user save here
         }
 
+        private void AddUser()
+        {
+            CurrentUser = new User();
+            IsEditPopupOpen = true;
+        }
+
         private void EditUser(User currentUser)
         {
-            var test = new List<User>();
-            test.Add(currentUser);
-            CurrentUsers = test;
+            CurrentUser = currentUser;
             IsEditPopupOpen = true;
         }
 
         private void CloseEditUserPopup()
         {
-            CurrentUsers.Clear();
             IsEditPopupOpen = false;
         }
 
