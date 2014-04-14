@@ -77,6 +77,19 @@ namespace BusinessManagementSystem.ViewModels
             }
         }
 
+        public ICommand SavetUserCommand
+        {
+            get
+            {
+                if (_saveUserCommand == null)
+                {
+                    _saveUserCommand = new RelayCommand(
+                        p => SaveUser());
+                }
+                return _saveUserCommand;
+            }
+        }
+
         #endregion
 
         #region Properties
@@ -155,6 +168,7 @@ namespace BusinessManagementSystem.ViewModels
 
         private void SaveUser()
         {
+            var test = CurrentUser;
             // You would implement your user save here
         }
 
